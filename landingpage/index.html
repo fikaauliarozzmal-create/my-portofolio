@@ -1,0 +1,3062 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rozzmal Fika Aulia | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:"Inter",sans-serif;
+
+background:#050505;
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+:root{
+
+--bg:#050505;
+
+--bg2:#120404;
+
+--bg3:#250707;
+
+--accent:#9b1c1c;
+
+--accent2:#d84d4d;
+
+--text:#ffffff;
+
+--soft:#bdbdbd;
+
+--border:rgba(255,255,255,.08);
+
+--radius:35px;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+img{
+
+display:block;
+
+max-width:100%;
+
+}
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+
+radial-gradient(circle at 15% 20%,
+rgba(120,0,0,.35),
+transparent 35%),
+
+radial-gradient(circle at 80% 70%,
+rgba(160,30,30,.20),
+transparent 35%),
+
+linear-gradient(
+180deg,
+#050505,
+#140404,
+#220606,
+#050505
+);
+
+z-index:-3;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+
+opacity:.05;
+
+pointer-events:none;
+
+z-index:-2;
+
+}
+
+.navbar{
+
+position:fixed;
+
+top:25px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:92%;
+
+max-width:1400px;
+
+height:75px;
+
+padding:0 40px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+border-radius:100px;
+
+background:rgba(255,255,255,.04);
+
+backdrop-filter:blur(30px);
+
+border:1px solid rgba(255,255,255,.08);
+
+z-index:999;
+
+}
+
+.hero{
+
+min-height:100vh;
+
+display:grid;
+
+grid-template-columns:1.1fr .9fr;
+
+align-items:center;
+
+padding:170px 8% 100px;
+
+gap:70px;
+
+position:relative;
+
+overflow:visible;
+
+}
+
+.hero-left{
+
+z-index:5;
+
+}
+
+.hero-small{
+
+display:inline-block;
+
+letter-spacing:6px;
+
+font-size:13px;
+
+color:#888;
+
+margin-bottom:25px;
+
+text-transform:uppercase;
+
+}
+
+.hero h1{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:clamp(95px,11vw,180px);
+
+line-height:.78;
+
+letter-spacing:-8px;
+
+font-weight:700;
+
+margin-bottom:40px;
+
+}
+
+.hero h1 span{
+
+display:block;
+
+opacity:0;
+
+transform:translateY(80px);
+
+animation:textReveal 1s forwards;
+
+}
+
+.hero h1 span:nth-child(1){
+
+animation-delay:.2s;
+
+}
+
+.hero h1 span:nth-child(2){
+
+animation-delay:.5s;
+
+}
+
+.hero h1 span:nth-child(3){
+
+animation-delay:.8s;
+
+}
+
+@keyframes textReveal{
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.hero p{
+
+max-width:560px;
+
+font-size:18px;
+
+line-height:2;
+
+color:#b7b7b7;
+
+margin-bottom:45px;
+
+}
+
+.hero-btn{
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.btn-red{
+
+padding:18px 42px;
+
+border-radius:60px;
+
+background:linear-gradient(135deg,#7f1010,#c93d3d);
+
+font-weight:600;
+
+transition:.4s;
+
+position:relative;
+
+overflow:hidden;
+}
+
+.btn-red::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:60%;
+
+height:100%;
+
+background:rgba(255,255,255,.25);
+
+transform:skewX(-25deg);
+
+transition:.7s;
+
+}
+
+.btn-red:hover::before{
+
+left:140%;
+
+}
+
+.btn-red:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 20px 45px rgba(170,30,30,.35);
+
+}
+
+.btn-white{
+
+padding:18px 42px;
+
+border-radius:60px;
+
+border:1px solid rgba(255,255,255,.15);
+
+background:rgba(255,255,255,.04);
+
+backdrop-filter:blur(20px);
+
+transition:.4s;
+
+}
+
+.btn-white:hover{
+transform:translateY(-6px);
+background:rgba(255,255,255,.08);
+box-shadow:0 20px 40px rgba(255,255,255,.08);
+}
+
+.hero-right{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+position:relative;
+
+min-height:750px;
+
+}
+
+.hero-photo{
+
+position:relative;
+
+width:520px;
+
+height:720px;
+
+overflow:hidden;
+
+transition:
+transform .25s ease,
+box-shadow .5s ease,
+filter .5s ease;
+
+transform-style:preserve-3d;
+
+will-change:transform;
+
+cursor:pointer;
+
+border-radius:320px;
+
+border:1px solid rgba(255,255,255,.08);
+
+background:#111;
+
+box-shadow:
+0 50px 120px rgba(0,0,0,.55);
+
+z-index:5;
+
+isolation:isolate;
+
+
+}
+
+.hero-photo img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+filter:
+
+brightness(.92)
+
+contrast(1.05)
+
+saturate(.95);
+
+transition:1s;
+
+}
+
+.hero-photo:hover{
+
+transform:translateY(-12px);
+
+}
+
+.hero-photo:hover img{
+
+transform:scale(1.1) rotate(.8deg);
+
+filter:
+
+brightness(1)
+
+contrast(1.08)
+
+saturate(1.1);
+
+}
+
+.hero-photo::before{
+
+content:"";
+
+position:absolute;
+
+width:650px;
+
+height:650px;
+
+background:radial-gradient(circle,
+rgba(170,20,20,.35),
+transparent 70%);
+
+left:50%;
+
+top:50%;
+
+transform:translate(-50%,-50%);
+
+z-index:-1;
+
+filter:blur(80px);
+
+}
+
+.hero-photo::after{
+
+content:"";
+
+position:absolute;
+
+inset:18px;
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:320px;
+
+pointer-events:none;
+
+}
+
+.hero-photo .glow{
+
+position:absolute;
+inset:-80px;
+
+background:
+
+radial-gradient(circle,
+rgba(180,40,40,.28),
+transparent 70%);
+
+filter:blur(90px);
+
+z-index:-1;
+
+}
+
+.hero-circle{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(100px);
+
+pointer-events:none;
+
+}
+
+.circle1{
+
+width:420px;
+
+height:420px;
+
+background:rgba(150,20,20,.18);
+
+top:40px;
+
+right:20px;
+
+}
+
+.circle2{
+
+width:300px;
+
+height:300px;
+
+background:rgba(255,80,80,.08);
+
+bottom:20px;
+
+left:30px;
+
+}
+
+.logo{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:42px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+}
+
+nav{
+
+display:flex;
+
+gap:45px;
+
+}
+
+nav a{
+
+font-size:15px;
+
+color:#ddd;
+
+transition:.35s;
+
+}
+
+nav a{
+
+position:relative;
+
+}
+
+nav a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-8px;
+
+width:0;
+
+height:2px;
+
+background:#d84d4d;
+
+transition:.35s;
+
+}
+
+nav a:hover{
+
+color:white;
+
+}
+
+nav a:hover::after{
+
+width:100%;
+
+}
+
+.talk{
+
+padding:15px 28px;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,#7c1111,#d84848);
+
+font-size:15px;
+
+font-weight:600;
+
+transition:.35s;
+
+}
+
+.talk:hover{
+
+transform:translateY(-4px);
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+left:8%;
+
+bottom:120px;
+
+width:180px;
+
+height:1px;
+
+background:rgba(255,255,255,.18);
+
+}
+
+.hero::after{
+
+content:"01";
+
+position:absolute;
+
+right:8%;
+
+bottom:90px;
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:140px;
+
+color:rgba(255,255,255,.05);
+
+font-weight:bold;
+
+}
+
+.about{
+
+padding:140px 8%;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:90px;
+
+align-items:center;
+
+}
+
+.about-image{
+
+position:relative;
+
+}
+
+.about-image img{
+
+width:100%;
+
+border-radius:40px;
+
+display:block;
+
+transition:.7s;
+
+box-shadow:
+
+0 40px 80px rgba(0,0,0,.45);
+
+}
+
+.about-image:hover img{
+
+transform:scale(1.03);
+
+}
+
+.section-tag{
+
+display:inline-block;
+
+letter-spacing:4px;
+
+font-size:13px;
+
+color:#c97b7b;
+
+margin-bottom:20px;
+
+}
+
+.about-content h2{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:65px;
+
+line-height:1.1;
+
+margin-bottom:30px;
+
+}
+
+.about-content p{
+
+font-size:17px;
+
+line-height:2;
+
+color:#bdbdbd;
+
+margin-bottom:45px;
+
+}
+
+.about-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:25px;
+
+}
+
+.about-card{
+
+padding:35px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.04);
+
+backdrop-filter:blur(25px);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.4s;
+
+}
+
+.about-card:hover{
+transform:translateY(-12px) scale(1.03);
+background:rgba(170,20,20,.08);
+box-shadow:0 25px 60px rgba(170,20,20,.18);
+}
+
+.about-card h3{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:42px;
+
+margin-bottom:10px;
+
+color:#fff;
+
+}
+
+.about-card span{
+
+color:#aaa;
+
+}
+
+/* CONTACT */
+
+.contact{
+padding:140px 8%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
+}
+
+.contact-left h2{
+font-family:"Cormorant Garamond",serif;
+font-size:65px;
+margin:20px 0;
+}
+
+.contact-left p{
+color:#bdbdbd;
+line-height:2;
+margin-bottom:40px;
+max-width:500px;
+}
+
+.contact-info{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.contact-info div{
+padding:20px 25px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+border-radius:20px;
+transition:.4s;
+}
+
+.contact-info div:hover{
+background:rgba(170,20,20,.08);
+transform:translateX(10px);
+box-shadow:0 20px 40px rgba(170,20,20,.18);
+}
+
+.contact-right{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+border-radius:35px;
+padding:40px;
+backdrop-filter:blur(20px);
+}
+
+.contact-right form{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.contact-right input,
+.contact-right textarea{
+
+width:100%;
+padding:18px 22px;
+border:none;
+outline:none;
+border-radius:18px;
+background:#111;
+color:#fff;
+font-size:15px;
+
+}
+
+.contact-right textarea{
+
+height:180px;
+resize:none;
+
+}
+
+.contact-right button{
+
+padding:18px;
+border:none;
+border-radius:50px;
+background:linear-gradient(135deg,#7f1010,#d84d4d);
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:.4s;
+
+}
+
+.contact-right button:hover{
+
+transform:translateY(-5px);
+
+}
+
+@media(max-width:1000px){
+
+.about{
+
+grid-template-columns:1fr;
+
+}
+
+.about-content{
+
+margin-top:40px;
+
+}
+
+}
+
+.education{
+
+padding:140px 8%;
+
+}
+
+.center{
+
+display:block;
+
+text-align:center;
+
+}
+
+.section-title{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:65px;
+
+text-align:center;
+
+margin:20px 0 90px;
+
+}
+
+.timeline{
+
+position:relative;
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.timeline::before{
+
+content:"";
+
+position:absolute;
+
+left:20px;
+
+top:0;
+
+width:2px;
+
+height:100%;
+
+background:rgba(255,255,255,.15);
+
+}
+
+.timeline-item{
+
+position:relative;
+
+padding-left:70px;
+
+margin-bottom:60px;
+
+}
+
+.timeline-dot{
+
+position:absolute;
+
+left:9px;
+
+top:8px;
+
+width:24px;
+
+height:24px;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#a51f1f,#d84d4d);
+
+box-shadow:0 0 20px rgba(216,77,77,.6);
+
+}
+
+.timeline-content{
+
+padding:35px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+transition:.4s;
+
+}
+
+.timeline-content:hover{
+transform:translateY(-12px);
+background:rgba(170,20,20,.08);
+box-shadow:0 25px 60px rgba(170,20,20,.15);
+}
+
+.timeline-content span{
+
+font-size:14px;
+
+letter-spacing:2px;
+
+color:#c97b7b;
+
+}
+
+.timeline-content h3{
+
+margin:15px 0;
+
+font-size:28px;
+
+font-family:"Cormorant Garamond",serif;
+
+}
+
+.timeline-content p{
+
+line-height:1.9;
+
+color:#bdbdbd;
+
+}
+
+@media(max-width:768px){
+
+.section-title{
+
+font-size:45px;
+
+}
+
+.timeline-item{
+
+padding-left:55px;
+
+}
+
+}
+
+.projects{
+
+padding:140px 8%;
+
+}
+
+.project-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+
+gap:35px;
+
+}
+
+.project-card{
+
+position:relative;
+
+height:520px;
+
+overflow:hidden;
+
+border-radius:35px;
+
+cursor:pointer;
+
+border:1px solid rgba(255,255,255,.08);
+
+background:#111;
+
+transition:.6s;
+
+}
+
+.project-card:hover{
+
+transform:translateY(-15px);
+
+box-shadow:0 30px 70px rgba(0,0,0,.35);
+
+}
+
+.project-image{
+
+position:absolute;
+
+inset:0;
+
+}
+
+.project-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:1.2s;
+
+filter:brightness(.65);
+
+}
+
+.project-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+.project-content{
+
+position:absolute;
+
+left:35px;
+
+right:35px;
+
+bottom:35px;
+
+z-index:5;
+
+transform:translateY(30px);
+
+transition:.5s;
+
+}
+
+.project-card:hover .project-content{
+
+transform:translateY(0);
+
+}
+
+.project-content span{
+
+font-size:13px;
+
+letter-spacing:2px;
+
+color:#d87a7a;
+
+}
+
+.project-content h3{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:42px;
+
+margin:15px 0;
+
+color:white;
+
+}
+
+.project-content p{
+
+line-height:1.9;
+
+color:#bdbdbd;
+
+margin-bottom:30px;
+
+}
+
+.project-btn{
+
+display:flex;
+
+gap:15px;
+
+}
+
+.project-btn a{
+
+padding:14px 24px;
+
+border-radius:50px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.12);
+
+transition:.4s;
+
+}
+
+.project-btn a:hover{
+
+background:linear-gradient(135deg,#8d1d1d,#d84d4d);
+
+transform:translateY(-5px);
+
+}
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(80px);
+
+transition:1s ease;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+.section-title{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.section-title::before{
+
+content:attr(data-title);
+
+position:absolute;
+
+left:50%;
+
+top:50%;
+
+transform:translate(-50%,-50%);
+
+font-size:130px;
+
+font-weight:700;
+
+color:rgba(255,255,255,.03);
+
+white-space:nowrap;
+
+pointer-events:none;
+
+z-index:-1;
+
+font-family:"Cormorant Garamond",serif;
+
+}
+
+.footer{
+
+padding:40px;
+
+text-align:center;
+
+color:#777;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+background:#070707;
+
+}
+
+.hero-bg-text{
+
+position:absolute;
+
+top:45%;
+
+left:-60px;
+
+font-size:230px;
+
+font-family:"Cormorant Garamond",serif;
+
+font-weight:700;
+
+color:rgba(255,255,255,.03);
+
+transform:rotate(-90deg);
+
+pointer-events:none;
+
+letter-spacing:15px;
+
+user-select:none;
+
+}
+
+.hero-line{
+
+position:absolute;
+
+left:0;
+
+top:50%;
+
+width:180px;
+
+height:1px;
+
+background:rgba(255,255,255,.18);
+
+}
+
+.scroll-down{
+
+position:absolute;
+
+left:8%;
+
+bottom:35px;
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+font-size:12px;
+
+letter-spacing:4px;
+
+color:#999;
+
+text-transform:uppercase;
+
+}
+
+.scroll-down::before{
+
+content:"";
+
+width:60px;
+
+height:1px;
+
+background:#999;
+
+}
+
+.about,
+.education,
+.projects,
+.skills,
+.contact{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.about::before,
+.education::before,
+.projects::before{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+
+height:500px;
+
+background:radial-gradient(circle,
+rgba(170,20,20,.15),
+transparent 70%);
+
+filter:blur(90px);
+
+right:-180px;
+
+top:-120px;
+
+pointer-events:none;
+
+}
+
+.floating-card{
+
+position:absolute;
+
+left:-40px;
+
+bottom:80px;
+
+padding:22px 28px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:22px;
+
+box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+z-index:20;
+
+animation:floatCard 5s ease-in-out infinite;
+
+}
+
+.floating-card h4{
+
+font-size:30px;
+
+font-family:"Cormorant Garamond",serif;
+
+margin-bottom:5px;
+
+}
+
+.floating-card p{
+
+font-size:14px;
+
+color:#bbb;
+
+}
+
+@keyframes floatCard{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+.navbar.scrolled{
+
+background:rgba(5,5,5,.82);
+
+backdrop-filter:blur(35px);
+
+border:1px solid rgba(255,255,255,.12);
+
+box-shadow:0 20px 50px rgba(0,0,0,.45);
+
+height:65px;
+
+padding:0 30px;
+
+top:15px;
+
+transition:
+background .4s,
+height .4s,
+padding .4s,
+top .4s,
+box-shadow .4s;
+
+}
+
+.project-card::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+
+transparent 20%,
+
+rgba(0,0,0,.25),
+
+rgba(0,0,0,.92)
+
+);
+
+z-index:2;
+
+}
+
+.project-card:hover{
+
+transform:translateY(-18px);
+
+box-shadow:0 35px 90px rgba(0,0,0,.45);
+
+}
+
+.project-card:hover img{
+
+transform:scale(1.12);
+
+filter:brightness(.95);
+
+}
+
+.skills{
+
+padding:140px 8%;
+
+}
+
+.skill{
+
+margin-bottom:35px;
+
+}
+
+.skill-top{
+
+display:flex;
+
+justify-content:space-between;
+
+margin-bottom:12px;
+
+font-size:18px;
+
+}
+
+.skill-bar{
+
+width:100%;
+
+height:10px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:50px;
+
+overflow:hidden;
+
+}
+
+.skill-fill{
+height:100%;
+width:0;
+border-radius:50px;
+background:linear-gradient(90deg,#7f1010,#d84d4d);
+transition:2s;
+box-shadow:0 0 20px rgba(216,77,77,.45);
+}
+
+.hero-left{
+
+animation:fadeUp 1.2s ease;
+
+}
+
+.hero-right{
+
+animation:fadeRight 1.4s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(70px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fadeRight{
+
+from{
+
+opacity:0;
+
+transform:translateX(80px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+.scroll-down{
+
+animation:bounce 2s infinite;
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(8px);
+
+}
+
+}
+
+/* CUSTOM CURSOR */
+
+body{
+
+cursor:none;
+
+}
+
+.cursor{
+
+position:fixed;
+
+width:40px;
+
+height:40px;
+
+border:2px solid rgba(216,77,77,.7);
+
+border-radius:50%;
+
+pointer-events:none;
+
+transform:translate(-50%,-50%);
+
+transition:
+width .25s,
+height .25s,
+border .25s,
+background .25s,
+transform .08s;
+
+z-index:999999;
+
+}
+
+.cursor-dot{
+
+position:fixed;
+
+width:8px;
+
+height:8px;
+
+background:#d84d4d;
+
+border-radius:50%;
+
+pointer-events:none;
+
+transform:translate(-50%,-50%);
+
+z-index:1000000;
+
+}
+
+.cursor.active{
+
+width:65px;
+
+height:65px;
+
+background:rgba(216,77,77,.15);
+
+border-color:#d84d4d;
+
+}
+
+.project-modal{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.75);
+
+backdrop-filter:blur(10px);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.4s;
+
+z-index:999999;
+
+}
+
+.project-modal.show{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+.modal-box{
+
+width:min(900px,92%);
+
+background:#101010;
+
+padding:35px;
+
+border-radius:30px;
+
+border:1px solid rgba(255,255,255,.08);
+
+position:relative;
+
+animation:popup .35s;
+
+}
+
+.modal-box img{
+
+width:100%;
+
+border-radius:20px;
+
+margin-bottom:25px;
+
+}
+
+.modal-box h2{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:45px;
+
+margin-bottom:20px;
+
+}
+
+.modal-box p{
+
+color:#bbb;
+
+line-height:1.9;
+
+margin-bottom:25px;
+
+}
+
+.modal-tech{
+
+display:flex;
+
+gap:12px;
+
+flex-wrap:wrap;
+
+margin-bottom:30px;
+
+}
+
+.modal-tech span{
+
+padding:10px 18px;
+
+background:#1b1b1b;
+
+border-radius:50px;
+
+}
+
+.modal-buttons{
+
+display:flex;
+
+gap:15px;
+
+}
+
+.modal-buttons a{
+
+padding:15px 25px;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,#7f1010,#d84d4d);
+
+}
+
+.close-modal{
+
+position:absolute;
+
+top:20px;
+
+right:20px;
+
+font-size:35px;
+
+background:none;
+
+border:none;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+@keyframes popup{
+
+from{
+
+transform:scale(.8);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+#particles{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+z-index:-1;
+
+opacity:.45;
+
+}
+
+.mouse-glow{
+
+position:fixed;
+
+width:350px;
+
+height:350px;
+
+background:radial-gradient(circle,
+rgba(216,77,77,.18),
+transparent 70%);
+
+border-radius:50%;
+
+pointer-events:none;
+
+transform:translate(-50%,-50%);
+
+filter:blur(45px);
+
+z-index:-1;
+
+transition:
+left .08s linear,
+top .08s linear;
+
+}
+
+.menu-toggle{
+
+display:none;
+
+flex-direction:column;
+
+gap:6px;
+
+cursor:pointer;
+
+}
+
+.menu-toggle span{
+
+width:28px;
+
+height:3px;
+
+background:white;
+
+border-radius:10px;
+
+transition:.3s;
+
+}
+
+@media(max-width:900px){
+
+nav{
+
+position:absolute;
+
+top:90px;
+
+left:0;
+
+width:100%;
+
+background:#111;
+
+border-radius:25px;
+
+padding:30px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+opacity:0;
+
+visibility:hidden;
+
+transform:translateY(-20px);
+
+transition:.4s;
+
+}
+
+nav.active{
+
+opacity:1;
+
+visibility:visible;
+
+transform:translateY(0);
+
+}
+
+.menu-toggle{
+
+display:flex;
+
+}
+
+.talk{
+
+display:none;
+
+}
+
+.hero{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero-left p{
+
+margin:auto;
+
+}
+
+.hero-btn{
+
+justify-content:center;
+
+}
+
+.hero-right{
+
+margin-top:40px;
+
+}
+
+.hero-photo{
+
+width:360px;
+
+height:500px;
+
+}
+
+.about{
+
+grid-template-columns:1fr;
+
+}
+
+.contact{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+nav a.active{
+
+color:#d84d4d;
+
+}
+
+nav a.active::after{
+
+width:100%;
+
+}
+
+.cursor.active{
+
+width:60px;
+height:60px;
+background:rgba(216,77,77,.15);
+border-color:#fff;
+
+}
+
+.preloader{
+
+position:fixed;
+inset:0;
+background:#050505;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:100000;
+transition:opacity .8s ease,visibility .8s;
+
+}
+
+.preloader.hide{
+
+opacity:0;
+visibility:hidden;
+
+}
+
+.loader-circle{
+
+width:90px;
+height:90px;
+border:4px solid rgba(255,255,255,.1);
+border-top:4px solid #d84d4d;
+border-radius:50%;
+animation:spin 1s linear infinite;
+
+}
+
+.loader-text{
+
+margin-top:25px;
+font-size:15px;
+letter-spacing:6px;
+color:#aaa;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+    <div class="preloader">
+
+<div class="loader-circle"></div>
+
+<div class="loader-text">
+LOADING...
+</div>
+
+</div>
+
+<div class="cursor"></div>
+<div class="cursor-dot"></div>
+<canvas id="particles"></canvas>
+<div class="mouse-glow"></div>
+<header class="navbar">
+
+    <div class="logo">
+        f.
+    </div>
+
+    <nav>
+
+<a href="#home">Home</a>
+
+<a href="#about">About</a>
+
+<a href="#education">Education</a>
+
+<a href="#projects">Projects</a>
+
+<a href="#skills">Skills</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+<div class="menu-toggle">
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+</div>
+
+    <a href="#contact" class="talk">
+Let's Talk
+</a>
+
+</header>
+
+
+<section class="hero" id="home">
+
+    <div class="hero-bg-text">
+PORTFOLIO
+</div>
+
+<div class="hero-line"></div>
+
+    <div class="hero-left">
+
+        <span class="hero-small">
+            PORTFOLIO • 2026
+        </span>
+
+        <h1>
+            <span>ROZZMAL</span>
+            <span>FIKA</span>
+            <span>AULIA</span>
+        </h1>
+
+        <p>
+            Frontend Developer & UI Designer yang
+            menciptakan website modern dengan
+            pengalaman visual premium, editorial,
+            dan interaksi yang elegan.
+        </p>
+
+        <div class="hero-btn">
+
+            <a href="#projects" class="btn-red">
+                View Projects
+            </a>
+
+            <a href="#about" class="btn-white">
+                About Me
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <div class="hero-circle circle1"></div>
+        <div class="hero-circle circle2"></div>
+
+        <div class="hero-photo">
+
+<div class="glow"></div>
+
+<img src="assets/fika.png" alt="Rozzmal">
+
+</div>
+
+    </div>
+
+    <div class="floating-card">
+
+    <h4>20+</h4>
+
+    <p>Creative Projects</p>
+
+</div>
+
+</section>
+<section class="about reveal" id="about">
+
+<div class="about-image">
+
+<img src="assets/my.jpeg" alt="Rozzmal">
+
+</div>
+
+<div class="about-content">
+
+<span class="section-tag">
+ABOUT ME
+</span>
+
+<h2>
+Creating Elegant Digital Experiences
+</h2>
+
+<p>
+
+Saya adalah Frontend Developer yang memiliki minat pada UI Design,
+Web Development, dan pengalaman pengguna yang modern.
+Saya senang membuat website dengan tampilan elegan,
+minimalis, dan memiliki animasi yang halus.
+
+</p>
+
+<div class="about-grid">
+
+<div class="about-card">
+
+<h3>20+</h3>
+
+<span>Projects</span>
+
+</div>
+
+<div class="about-card">
+
+<h3>3+</h3>
+
+<span>Years Learning</span>
+
+</div>
+
+<div class="about-card">
+
+<h3>UI/UX</h3>
+
+<span>Modern Design</span>
+
+</div>
+
+<div class="about-card">
+
+<h3>100%</h3>
+
+<span>Responsive</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section class="education reveal" id="education">
+
+<span class="section-tag center">
+EDUCATION
+</span>
+
+<h2 class="section-title" data-title="Education">
+    My Learning Journey
+</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<span>2023 - Sekarang</span>
+
+<h3>SMK Negeri ...</h3>
+
+<p>
+Jurusan Rekayasa Perangkat Lunak (RPL). Fokus mempelajari Web Development, UI/UX Design, Database, dan Pemrograman.
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<span>2020 - 2023</span>
+
+<h3>SMP ...</h3>
+
+<p>
+Mempelajari pendidikan umum serta mulai mengenal dunia teknologi dan desain.
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<span>2014 - 2020</span>
+
+<h3>SD ...</h3>
+
+<p>
+Menempuh pendidikan dasar dan mulai tertarik dengan dunia komputer.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section class="projects reveal" id="projects">
+
+    <span class="section-tag center">
+        PROJECTS
+    </span>
+
+    <h2 class="section-title" data-title="Projects">
+    Featured Works
+</h2>
+
+    <div class="project-grid">
+
+        <div class="project-card"
+
+data-title="Ethereal Nail Studio"
+
+data-image="assets/ethereal-cover.jpg"
+
+data-desc="Website salon kuku lengkap dengan booking online, dashboard admin, pelanggan, karyawan, gallery, transaksi, dan sistem modern."
+
+data-demo="https://precious-sprinkles-4a8050.netlify.app/"
+
+data-github="https://github.com/...">
+
+<div class="project-image">
+
+<img src="assets/ethereal-cover.jpg">
+
+</div>
+
+<div class="project-content">
+
+<span>Full Website</span>
+
+<h3>Ethereal Nail Studio</h3>
+
+<p>
+Website salon kuku dengan sistem lengkap dan desain premium.
+</p>
+
+<div class="project-btn">
+
+<a href="#">Preview</a>
+
+<a href="#">Github</a>
+
+</div>
+
+</div>
+
+</div>
+
+    <div class="project-card"
+
+data-title="Personal Portfolio"
+
+data-image="assets/portfolio-cover.jpg"
+
+data-desc="Website portfolio pribadi modern dengan animasi premium."
+
+data-demo="https://link-portfolio.com"
+
+data-github="https://github.com/username/portfolio">
+
+    <div class="project-image">
+        <img src="assets/portfolio-cover.jpg" alt="Personal Portfolio">
+    </div>
+
+    <div class="project-content">
+
+        <span>Portfolio</span>
+
+        <h3>Personal Portfolio</h3>
+
+        <p>
+            Website portfolio modern dengan animasi premium.
+        </p>
+
+        <div class="project-btn">
+
+            <a href="#">Preview</a>
+
+            <a href="#">Github</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+        <div class="project-card"
+
+data-title="Coming Soon"
+
+data-image="assets/comingsoon.jpg"
+
+data-desc="Project baru sedang dalam proses pengembangan."
+
+data-demo="#"
+
+data-github="#">
+
+<div class="project-image">
+
+<img src="assets/comingsoon.jpg">
+
+</div>
+
+<div class="project-content">
+
+<span>Next Project</span>
+
+<h3>Coming Soon</h3>
+
+<p>
+Project berikutnya akan segera hadir.
+</p>
+
+<div class="project-btn">
+
+<a href="#">Coming Soon</a>
+
+</div>
+
+</div>
+
+</div>
+<div class="scroll-down">
+
+SCROLL
+
+</div>
+</section>
+<section class="contact reveal" id="contact">
+
+<div class="contact-left">
+
+<span class="section-tag">
+CONTACT
+</span>
+
+<h2 class="section-title" data-title="Contact">
+Let's Create Something Beautiful Together
+</h2>
+
+<p>
+Saya terbuka untuk project freelance, kolaborasi,
+maupun kesempatan kerja.
+Silakan hubungi saya melalui kontak berikut.
+</p>
+
+<div class="contact-info">
+
+<div>
+📧 fikaauliarozzmal@email.com
+</div>
+
+<div>
+📱 +62 xxx xxxx xxxx
+</div>
+
+<div>
+📍 Indonesia
+</div>
+
+</div>
+
+</div>
+
+<div class="contact-right">
+
+<form>
+
+<input
+type="text"
+placeholder="Your Name">
+
+<input
+type="email"
+placeholder="Email">
+
+<textarea
+placeholder="Message"></textarea>
+
+<button type="submit">
+    Send Message
+</button>
+
+</form>
+
+</div>
+
+</section>
+<section class="skills reveal" id="skills">
+
+<span class="section-tag center">
+SKILLS
+</span>
+
+<h2 class="section-title" data-title="Skills">
+My Skills
+</h2>
+
+<div class="skill">
+
+<div class="skill-top">
+
+<span>HTML & CSS</span>
+
+<span>95%</span>
+
+</div>
+
+<div class="skill-bar">
+
+<div class="skill-fill" data-width="95%"></div>
+
+</div>
+
+</div>
+
+<div class="skill">
+
+<div class="skill-top">
+
+<span>JavaScript</span>
+
+<span>80%</span>
+
+</div>
+
+<div class="skill-bar">
+
+<div class="skill-fill" data-width="80%"></div>
+
+</div>
+
+</div>
+
+<div class="skill">
+
+<div class="skill-top">
+
+<span>UI / UX Design</span>
+
+<span>90%</span>
+
+</div>
+
+<div class="skill-bar">
+
+<div class="skill-fill" data-width="90%"></div>
+
+</div>
+
+</div>
+
+<div class="skill">
+
+<div class="skill-top">
+
+<span>Responsive Design</span>
+
+<span>95%</span>
+
+</div>
+
+<div class="skill-bar">
+
+<div class="skill-fill" data-width="95%"></div>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="project-modal" id="projectModal">
+
+<div class="modal-box">
+
+<button class="close-modal">&times;</button>
+
+<img
+id="modalImage"
+src=""
+alt="Project">
+
+<h2 id="modalTitle"></h2>
+
+<p id="modalDesc"></p>
+
+<div class="modal-tech">
+
+<span>HTML</span>
+
+<span>CSS</span>
+
+<span>JavaScript</span>
+
+</div>
+
+<div class="modal-buttons">
+
+<a id="demoLink" href="#" target="_blank">
+Live Demo
+</a>
+
+<a id="githubLink" href="#" target="_blank">
+Github
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<footer class="footer">
+
+<p>
+© 2026 Rozzmal Fika Aulia — All Rights Reserved
+</p>
+
+</footer>
+<script>
+
+const reveals=document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll",()=>{
+
+reveals.forEach(item=>{
+
+const top=item.getBoundingClientRect().top;
+
+const windowHeight=window.innerHeight;
+
+if(top<windowHeight-120){
+
+item.classList.add("active");
+
+}
+
+});
+
+});
+
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 80){
+
+        navbar.classList.add("scrolled");
+
+    }else{
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+});
+
+const bars=document.querySelectorAll(".skill-fill");
+
+window.addEventListener("scroll",()=>{
+
+bars.forEach(bar=>{
+
+const top=bar.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+
+bar.style.width=bar.dataset.width;
+
+}
+
+});
+
+});
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+document
+.getElementById("loader")
+.classList.add("hide");
+
+},1800);
+
+});
+
+const cursor=document.querySelector(".cursor");
+
+const dot=document.querySelector(".cursor-dot");
+
+document.addEventListener("mousemove",(e)=>{
+
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
+
+dot.style.left=e.clientX+"px";
+dot.style.top=e.clientY+"px";
+
+});
+
+const modal=document.getElementById("projectModal");
+
+const modalImage=document.getElementById("modalImage");
+
+const modalTitle=document.getElementById("modalTitle");
+
+const modalDesc=document.getElementById("modalDesc");
+
+document.querySelectorAll(".project-card").forEach(card=>{
+
+card.onclick=()=>{
+
+modal.classList.add("show");
+
+modalImage.src=card.dataset.image;
+
+modalTitle.innerHTML=card.dataset.title;
+
+modalDesc.innerHTML=card.dataset.desc;
+
+document.getElementById("demoLink").href = card.dataset.demo;
+
+document.getElementById("githubLink").href = card.dataset.github;
+
+}
+
+});
+
+document.querySelector(".close-modal").onclick=()=>{
+
+modal.classList.remove("show");
+
+};
+
+modal.onclick=(e)=>{
+
+if(e.target===modal){
+
+modal.classList.remove("show");
+
+}
+
+};
+
+const circle1=document.querySelector(".circle1");
+const circle2=document.querySelector(".circle2");
+
+document.addEventListener("mousemove",(e)=>{
+
+const x=e.clientX/window.innerWidth;
+const y=e.clientY/window.innerHeight;
+
+circle1.style.transform=
+`translate(${x*40}px,${y*40}px)`;
+
+circle2.style.transform=
+`translate(${-x*30}px,${-y*30}px)`;
+
+});
+
+const heroPhoto = document.querySelector(".hero-photo");
+
+document.addEventListener("mousemove", (e) => {
+
+    const x = (e.clientX / window.innerWidth - 0.5) * 18;
+    const y = (e.clientY / window.innerHeight - 0.5) * -18;
+
+    heroPhoto.style.transform =
+        `perspective(1200px)
+         rotateY(${x}deg)
+         rotateX(${y}deg)
+         translateY(-6px)`;
+
+});
+
+document.addEventListener("mouseleave", () => {
+
+    heroPhoto.style.transform =
+        "perspective(1200px) rotateX(0) rotateY(0)";
+
+});
+
+const canvas=document.getElementById("particles");
+
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<80;i++){
+
+particles.push({
+
+x:Math.random()*canvas.width,
+
+y:Math.random()*canvas.height,
+
+r:Math.random()*2+1,
+
+dx:(Math.random()-.5)*0.5,
+
+dy:(Math.random()-.5)*0.5
+
+});
+
+}
+
+function animateParticles(){
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    particles.forEach((p,index)=>{
+
+        p.x+=p.dx;
+        p.y+=p.dy;
+
+        if(p.x<0||p.x>canvas.width)p.dx*=-1;
+        if(p.y<0||p.y>canvas.height)p.dy*=-1;
+
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = "#d84d4d";
+        ctx.fillStyle="rgba(216,77,77,.8)";
+        ctx.fill();
+
+        for(let j=index+1;j<particles.length;j++){
+
+            const p2=particles[j];
+
+            const dx=p.x-p2.x;
+            const dy=p.y-p2.y;
+
+            const distance=Math.sqrt(dx*dx+dy*dy);
+
+            if(distance<120){
+
+                ctx.beginPath();
+
+                ctx.moveTo(p.x,p.y);
+
+                ctx.lineTo(p2.x,p2.y);
+
+                ctx.strokeStyle=
+                `rgba(216,77,77,${0.25-(distance/120)*0.25})`;
+
+                ctx.lineWidth=1;
+
+                ctx.stroke();
+
+            }
+
+        }
+
+    });
+
+    requestAnimationFrame(animateParticles);
+
+}
+
+animateParticles();
+
+window.addEventListener("resize",()=>{
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+});
+
+const glow=document.querySelector(".mouse-glow");
+
+document.addEventListener("mousemove",(e)=>{
+
+glow.style.left=e.clientX+"px";
+
+glow.style.top=e.clientY+"px";
+
+});
+
+const toggle=document.querySelector(".menu-toggle");
+
+const nav=document.querySelector("nav");
+
+toggle.addEventListener("click",()=>{
+
+nav.classList.toggle("active");
+
+});
+
+const sections=document.querySelectorAll("section");
+
+const links=document.querySelectorAll("nav a");
+
+window.addEventListener("scroll",()=>{
+
+let current="";
+
+sections.forEach(sec=>{
+
+const top=sec.offsetTop-150;
+
+const height=sec.offsetHeight;
+
+if(window.scrollY>=top){
+
+current=sec.getAttribute("id");
+
+}
+
+});
+
+links.forEach(link=>{
+
+link.classList.remove("active");
+
+if(link.getAttribute("href")==="#"+current){
+
+link.classList.add("active");
+
+}
+
+});
+
+});
+
+document.querySelectorAll("a,button,.project-card,.about-card,.timeline-content").forEach(item=>{
+
+item.addEventListener("mouseenter",()=>{
+
+cursor.classList.add("active");
+
+});
+
+item.addEventListener("mouseleave",()=>{
+
+cursor.classList.remove("active");
+
+});
+
+});
+
+const preloader=document.querySelector(".preloader");
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+preloader.classList.add("hide");
+
+},1200);
+
+});
+</script>
+</body>
+
+</html>
