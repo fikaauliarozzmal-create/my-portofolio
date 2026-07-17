@@ -8,6 +8,14 @@
 
 <title>Rozzmal Fika Aulia | Portfolio</title>
 
+<meta name="description" content="Portfolio Rozzmal Fika Aulia Frontend Developer dan UI Designer">
+
+<meta name="keywords" content="Frontend Developer, UI Designer, Portfolio">
+
+<meta name="author" content="Rozzmal Fika Aulia">
+
+<link rel="icon" href="assets/favicon.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -179,7 +187,6 @@ overflow:visible;
 }
 
 .hero-left{
-
 z-index:5;
 
 }
@@ -429,9 +436,8 @@ transition:1s;
 }
 
 .hero-photo:hover{
-
-transform:translateY(-12px);
-
+box-shadow:
+0 60px 120px rgba(0,0,0,.55);
 }
 
 .hero-photo:hover img{
@@ -1538,50 +1544,41 @@ filter:brightness(.95);
 }
 
 .skills{
-
-padding:140px 8%;
-
+    padding:140px 8%;
 }
 
-.skill{
-
-margin-bottom:35px;
-
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    margin-top:70px;
 }
 
-.skill-top{
-
-display:flex;
-
-justify-content:space-between;
-
-margin-bottom:12px;
-
-font-size:18px;
-
+.skill-card{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:30px;
+    padding:35px;
+    backdrop-filter:blur(20px);
+    transition:.4s;
 }
 
-.skill-bar{
-
-width:100%;
-
-height:10px;
-
-background:rgba(255,255,255,.08);
-
-border-radius:50px;
-
-overflow:hidden;
-
+.skill-card:hover{
+    transform:translateY(-12px);
+    background:rgba(170,20,20,.08);
+    box-shadow:0 25px 60px rgba(170,20,20,.18);
 }
 
-.skill-fill{
-height:100%;
-width:0;
-border-radius:50px;
-background:linear-gradient(90deg,#7f1010,#d84d4d);
-transition:2s;
-box-shadow:0 0 20px rgba(216,77,77,.45);
+.skill-card h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:34px;
+    margin-bottom:18px;
+}
+
+.skill-card p{
+    color:#bdbdbd;
+    line-height:1.9;
+    font-size:16px;
 }
 
 .hero-left{
@@ -1595,6 +1592,8 @@ animation:fadeUp 1.2s ease;
 animation:fadeRight 1.4s ease;
 
 }
+
+
 
 @keyframes fadeUp{
 
@@ -1663,6 +1662,24 @@ transform:translateY(8px);
 body{
 
 cursor:none;
+
+}
+
+@media(max-width:768px){
+
+body{
+
+cursor:auto;
+
+}
+
+.cursor,
+
+.cursor-dot{
+
+display:none;
+
+}
 
 }
 
@@ -2136,6 +2153,582 @@ transform:rotate(360deg);
 }
 
 }
+
+.music-player{
+
+position:fixed;
+
+right:30px;
+
+bottom:30px;
+
+width:340px;
+
+padding:22px;
+
+border-radius:30px;
+
+background:rgba(10,10,10,.82);
+
+backdrop-filter:blur(35px);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.55),
+0 0 40px rgba(216,77,77,.12);
+
+overflow:hidden;
+
+z-index:99999;
+
+transition:.4s;
+
+}
+
+.music-player:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+0 35px 80px rgba(0,0,0,.55),
+0 0 45px rgba(216,77,77,.18);
+
+}
+
+.album-cover{
+
+width:210px;
+
+height:210px;
+
+margin:auto;
+
+margin-bottom:22px;
+
+border-radius:50%;
+
+overflow:hidden;
+
+box-shadow:
+
+0 0 45px rgba(216,77,77,.35);
+
+animation:spinAlbum 18s linear infinite;
+
+animation-play-state:paused;
+
+}
+
+.music-player.playing .album-cover{
+
+animation-play-state:running;
+
+}
+
+.album-cover img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.6s;
+
+}
+
+.music-player:hover .album-cover img{
+
+transform:scale(1.08);
+
+}
+
+.album-cover img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+@keyframes spinAlbum{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+.music-player h3{
+
+font-size:22px;
+
+text-align:center;
+
+margin-bottom:8px;
+
+font-weight:600;
+
+}
+
+.music-player p{
+
+text-align:center;
+
+color:#999;
+
+font-size:14px;
+
+margin-bottom:22px;
+
+}
+
+.player-controls{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:18px;
+
+margin:20px 0;
+
+}
+
+.player-controls button{
+
+width:52px;
+
+height:52px;
+
+border:none;
+
+border-radius:50%;
+
+background:#181818;
+
+color:white;
+
+cursor:pointer;
+
+font-size:18px;
+
+transition:.3s;
+
+}
+
+.player-controls button:hover{
+
+background:#d84d4d;
+
+transform:scale(1.1);
+
+}
+
+.play-btn{
+
+width:65px !important;
+
+height:65px !important;
+
+font-size:24px !important;
+
+background:linear-gradient(135deg,#8b0000,#d84d4d)!important;
+
+}
+
+.music-search{
+
+display:flex;
+
+gap:10px;
+
+margin-top:15px;
+
+}
+
+.music-search input{
+
+flex:1;
+
+padding:12px 15px;
+
+background:#111;
+
+border:1px solid rgba(255,255,255,.06);
+
+color:white;
+
+border-radius:14px;
+
+font-size:13px;
+
+}
+
+.music-search button{
+
+padding:12px 18px;
+
+border:none;
+
+border-radius:14px;
+
+background:linear-gradient(135deg,#7c1111,#d84d4d);
+
+color:white;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+.progress-area{
+
+margin:20px 0;
+
+}
+
+.progress-bar{
+
+width:100%;
+
+height:6px;
+
+background:#222;
+
+border-radius:20px;
+
+overflow:hidden;
+
+cursor:pointer;
+
+}
+
+.progress{
+
+width:0%;
+
+height:100%;
+
+background:linear-gradient(90deg,#d84d4d,#ff7070);
+
+border-radius:20px;
+
+transition:.15s;
+
+}
+
+.time{
+
+display:flex;
+
+justify-content:space-between;
+
+font-size:12px;
+
+color:#999;
+
+margin-top:8px;
+
+}
+
+.volume-area{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+margin-top:20px;
+
+}
+
+.volume-area input{
+
+width:100%;
+
+accent-color:#d84d4d;
+
+}
+
+.music-search button:hover{
+
+transform:translateY(-3px);
+
+}
+
+.equalizer{
+
+display:flex;
+
+gap:4px;
+
+align-items:flex-end;
+
+height:22px;
+
+margin-bottom:15px;
+
+}
+
+.equalizer span{
+
+width:4px;
+
+background:#d84d4d;
+
+border-radius:10px;
+
+animation:musicWave .8s infinite alternate;
+
+}
+
+.equalizer span:nth-child(2){
+
+animation-delay:.2s;
+
+}
+
+.equalizer span:nth-child(3){
+
+animation-delay:.4s;
+
+}
+
+.equalizer span:nth-child(4){
+
+animation-delay:.6s;
+
+}
+
+@keyframes musicWave{
+
+from{
+
+height:6px;
+
+}
+
+to{
+
+height:22px;
+
+}
+
+}
+
+.playlist{
+
+margin-top:20px;
+
+max-height:170px;
+
+overflow-y:auto;
+
+padding-right:5px;
+
+}
+
+.playlist::-webkit-scrollbar{
+
+width:6px;
+
+}
+
+.playlist::-webkit-scrollbar-thumb{
+
+background:#d84d4d;
+
+border-radius:20px;
+
+}
+
+.song-item{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:12px 15px;
+
+margin-bottom:10px;
+
+background:rgba(255,255,255,.04);
+
+border-radius:15px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.song-item:hover{
+
+background:rgba(216,77,77,.15);
+
+transform:translateX(6px);
+
+}
+
+.song-item.active{
+
+border:1px solid #d84d4d;
+
+background:rgba(216,77,77,.18);
+
+}
+
+.song-item h4{
+
+font-size:15px;
+
+margin-bottom:3px;
+
+}
+
+.song-item span{
+
+font-size:12px;
+
+color:#999;
+
+}
+
+.equalizer{
+
+display:flex;
+
+justify-content:center;
+
+gap:5px;
+
+margin-bottom:20px;
+
+height:28px;
+
+}
+
+.equalizer span{
+
+width:5px;
+
+background:#d84d4d;
+
+border-radius:10px;
+
+height:12px;
+
+animation:eq .9s infinite;
+
+animation-play-state:paused;
+
+}
+
+.music-player.playing .equalizer span{
+
+animation-play-state:running;
+
+}
+
+.equalizer span:nth-child(2){
+
+animation-delay:.2s;
+
+}
+
+.equalizer span:nth-child(3){
+
+animation-delay:.4s;
+
+}
+
+.equalizer span:nth-child(4){
+
+animation-delay:.6s;
+
+}
+
+.equalizer span:nth-child(5){
+
+animation-delay:.8s;
+
+}
+
+@keyframes eq{
+
+0%,100%{
+
+height:8px;
+
+}
+
+50%{
+
+height:28px;
+
+}
+
+}
+
+.song-info{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:12px;
+
+margin-bottom:15px;
+
+}
+
+#favBtn{
+
+background:none;
+
+border:none;
+
+font-size:22px;
+
+cursor:pointer;
+
+color:white;
+
+transition:.3s;
+
+}
+
+#favBtn:hover{
+
+transform:scale(1.2);
+
+color:#ff4d6d;
+
+}
 </style>
 
 </head>
@@ -2335,63 +2928,63 @@ EDUCATION
 <h2 class="section-title" data-title="Education">
     My Learning Journey
 </h2>
-
 <div class="timeline">
 
-<div class="timeline-item">
+    <div class="timeline-item">
 
-<div class="timeline-dot"></div>
+        <div class="timeline-dot"></div>
 
-<div class="timeline-content">
+        <div class="timeline-content">
 
-<span>2023 - Sekarang</span>
+            <span>2023 - Sekarang</span>
 
-<h3>SMK Negeri ...</h3>
+            <h3>SMK</h3>
 
-<p>
-Jurusan Rekayasa Perangkat Lunak (RPL). Fokus mempelajari Web Development, UI/UX Design, Database, dan Pemrograman.
-</p>
+            <p>
+                Menempuh pendidikan di jurusan Rekayasa Perangkat Lunak (RPL). Mulai mempelajari HTML, CSS, JavaScript, desain antarmuka (UI), database, serta pengembangan website. Aktif mengembangkan berbagai proyek web untuk meningkatkan kemampuan dan pengalaman.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+
+            <span>2020 - 2023</span>
+
+            <h3>SMP</h3>
+
+            <p>
+                Menempuh pendidikan tingkat SMP dengan fokus pada mata pelajaran umum. Selama masa ini mulai mengembangkan kemampuan belajar, bekerja sama dalam kelompok, dan membangun rasa ingin tahu terhadap berbagai bidang ilmu.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+
+            <span>2014 - 2020</span>
+
+            <h3>SD</h3>
+
+            <p>
+                Menyelesaikan pendidikan dasar sebagai fondasi pembentukan karakter, kedisiplinan, tanggung jawab, serta kemampuan berpikir dan belajar yang menjadi bekal untuk jenjang pendidikan berikutnya.
+            </p>
+
+        </div>
+
+    </div>
 
 </div>
-
-</div>
-
-<div class="timeline-item">
-
-<div class="timeline-dot"></div>
-
-<div class="timeline-content">
-
-<span>2020 - 2023</span>
-
-<h3>SMP ...</h3>
-
-<p>
-Mempelajari pendidikan umum serta mulai mengenal dunia teknologi dan desain.
-</p>
-
-</div>
-
-</div>
-
-<div class="timeline-item">
-
-<div class="timeline-dot"></div>
-
-<div class="timeline-content">
-
-<span>2014 - 2020</span>
-
-<h3>SD ...</h3>
-
-<p>
-Menempuh pendidikan dasar dan mulai tertarik dengan dunia komputer.
-</p>
-
-</div>
-
-</div>
-
 </div>
 
 </section>
@@ -2421,7 +3014,7 @@ data-github="https://github.com/...">
 
 <div class="project-image">
 
-<img src="assets/ethereal-cover.jpg">
+<img src="assets/ethereal-cover.png">
 
 </div>
 
@@ -2437,9 +3030,9 @@ Website salon kuku dengan sistem lengkap dan desain premium.
 
 <div class="project-btn">
 
-<a href="#">Preview</a>
+<a href="#" class="preview-btn">Preview</a>
 
-<a href="#">Github</a>
+<a href="#" class="github-btn">Github</a>
 
 </div>
 
@@ -2451,16 +3044,16 @@ Website salon kuku dengan sistem lengkap dan desain premium.
 
 data-title="Personal Portfolio"
 
-data-image="assets/portfolio-cover.jpg"
+data-image="assets/portfolio-cover.png"
 
 data-desc="Website portfolio pribadi modern dengan animasi premium."
 
-data-demo="https://link-portfolio.com"
+data-demo="https://snazzy-duckanoo-6ad31e.netlify.app/"
 
 data-github="https://github.com/username/portfolio">
 
     <div class="project-image">
-        <img src="assets/portfolio-cover.jpg" alt="Personal Portfolio">
+        <img src="assets/portfolio-cover.png" alt="Personal Portfolio">
     </div>
 
     <div class="project-content">
@@ -2475,9 +3068,13 @@ data-github="https://github.com/username/portfolio">
 
         <div class="project-btn">
 
-            <a href="#">Preview</a>
+            <a
+href="https://..."
+target="_blank">
 
-            <a href="#">Github</a>
+Preview
+
+</a>
 
         </div>
 
@@ -2566,7 +3163,7 @@ Silakan hubungi saya melalui kontak berikut.
 
 <div class="contact-right">
 
-<form>
+<form id="contactForm">
 
 <input
 type="text"
@@ -2595,76 +3192,68 @@ SKILLS
 </span>
 
 <h2 class="section-title" data-title="Skills">
-My Skills
+My Expertise
 </h2>
 
-<div class="skill">
+<div class="skills-grid">
 
-<div class="skill-top">
+<div class="skill-card">
 
-<span>HTML & CSS</span>
+<h3>Frontend Development</h3>
 
-<span>95%</span>
-
-</div>
-
-<div class="skill-bar">
-
-<div class="skill-fill" data-width="95%"></div>
+<p>
+Mampu membangun tampilan website menggunakan HTML, CSS, dan JavaScript dengan struktur kode yang rapi, responsif, serta nyaman digunakan di berbagai ukuran layar.
+</p>
 
 </div>
 
-</div>
+<div class="skill-card">
 
-<div class="skill">
+<h3>UI Design</h3>
 
-<div class="skill-top">
-
-<span>JavaScript</span>
-
-<span>80%</span>
+<p>
+Mendesain antarmuka website dengan gaya modern, elegan, dan minimalis. Fokus pada kombinasi warna, tipografi, tata letak, serta pengalaman pengguna yang menarik.
+</p>
 
 </div>
 
-<div class="skill-bar">
+<div class="skill-card">
 
-<div class="skill-fill" data-width="80%"></div>
+<h3>Responsive Website</h3>
 
-</div>
-
-</div>
-
-<div class="skill">
-
-<div class="skill-top">
-
-<span>UI / UX Design</span>
-
-<span>90%</span>
+<p>
+Mengembangkan website yang dapat menyesuaikan tampilan secara optimal di desktop, tablet, maupun smartphone tanpa mengurangi kenyamanan pengguna.
+</p>
 
 </div>
 
-<div class="skill-bar">
+<div class="skill-card">
 
-<div class="skill-fill" data-width="90%"></div>
+<h3>Creative Problem Solving</h3>
 
-</div>
-
-</div>
-
-<div class="skill">
-
-<div class="skill-top">
-
-<span>Responsive Design</span>
-
-<span>95%</span>
+<p>
+Terbiasa mencari solusi ketika menghadapi kendala dalam proses pengembangan website, memperbaiki bug, dan terus belajar teknologi baru untuk meningkatkan kualitas hasil kerja.
+</p>
 
 </div>
 
-<div class="skill-bar">
+<div class="skill-card">
 
-<div class="skill-fill" data-width="95%"></div>
+<h3>Collaboration</h3>
+
+<p>
+Mampu bekerja sama dalam tim maupun secara mandiri, menerima masukan dengan baik, serta menyelesaikan proyek sesuai target yang telah ditentukan.
+</p>
+
+</div>
+
+<div class="skill-card">
+
+<h3>Continuous Learning</h3>
+
+<p>
+Selalu berusaha mengembangkan kemampuan melalui praktik langsung, eksplorasi teknologi terbaru, dan pembuatan berbagai proyek website untuk meningkatkan pengalaman.
+</p>
 
 </div>
 
@@ -2720,6 +3309,126 @@ Github
 </p>
 
 </footer>
+<div class="music-player">
+
+    <div class="album-cover">
+        <img id="cover"
+        src="assets/music-cover.jpg">
+    </div>
+
+    <h3 id="songTitle">
+        Lofi Hip Hop
+    </h3>
+
+    <div class="equalizer">
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+</div>
+
+    <div class="song-info">
+
+<p id="artist"></p>
+
+<button id="favBtn">
+
+🤍
+
+</button>
+
+</div>
+
+    <div class="equalizer">
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+</div>
+
+    <div id="player"></div>
+
+<div class="player-controls">
+
+    <button id="prevBtn">⏮</button>
+
+    <button class="play-btn" id="playBtn">▶</button>
+
+    <button id="nextBtn">⏭</button>
+
+</div>
+
+<div class="progress-area">
+
+<div class="progress-bar">
+
+<div class="progress" id="progress"></div>
+
+</div>
+
+<div class="time">
+
+<span id="currentTime">
+0:00
+</span>
+
+<span id="duration">
+0:00
+</span>
+
+</div>
+
+</div>
+
+<div class="volume-area">
+
+🔊
+
+<input
+
+type="range"
+
+id="volume"
+
+min="0"
+
+max="100"
+
+value="100">
+
+</div>
+
+<div class="playlist" id="playlist"></div>
+
+<div class="music-search">
+
+    <input
+    id="searchSong"
+    placeholder="Cari lagu...">
+
+    <button id="searchBtn">
+
+        🔍
+
+    </button>
+
+</div>
+
+</div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
 <script>
 
 const reveals=document.querySelectorAll(".reveal");
@@ -2755,36 +3464,6 @@ window.addEventListener("scroll", () => {
         navbar.classList.remove("scrolled");
 
     }
-
-});
-
-const bars=document.querySelectorAll(".skill-fill");
-
-window.addEventListener("scroll",()=>{
-
-bars.forEach(bar=>{
-
-const top=bar.getBoundingClientRect().top;
-
-if(top<window.innerHeight-100){
-
-bar.style.width=bar.dataset.width;
-
-}
-
-});
-
-});
-
-window.addEventListener("load",()=>{
-
-setTimeout(()=>{
-
-document
-.getElementById("loader")
-.classList.add("hide");
-
-},1800);
 
 });
 
@@ -2864,23 +3543,27 @@ circle2.style.transform=
 
 const heroPhoto = document.querySelector(".hero-photo");
 
-document.addEventListener("mousemove", (e) => {
+document.addEventListener("mousemove",(e)=>{
 
-    const x = (e.clientX / window.innerWidth - 0.5) * 18;
-    const y = (e.clientY / window.innerHeight - 0.5) * -18;
+const x=(e.clientX/window.innerWidth-.5)*12;
 
-    heroPhoto.style.transform =
-        `perspective(1200px)
-         rotateY(${x}deg)
-         rotateX(${y}deg)
-         translateY(-6px)`;
+const y=(e.clientY/window.innerHeight-.5)*-12;
+
+heroPhoto.style.transform=
+`perspective(1200px)
+rotateY(${x}deg)
+rotateX(${y}deg)`;
 
 });
 
-document.addEventListener("mouseleave", () => {
+window.addEventListener("mouseout",(e)=>{
 
-    heroPhoto.style.transform =
-        "perspective(1200px) rotateX(0) rotateY(0)";
+if(!e.relatedTarget){
+
+heroPhoto.style.transform=
+"perspective(1200px) rotateX(0) rotateY(0)";
+
+}
 
 });
 
@@ -2893,7 +3576,10 @@ canvas.height=window.innerHeight;
 
 let particles=[];
 
-for(let i=0;i<80;i++){
+const totalParticle=
+window.innerWidth<768?35:80;
+
+for(let i=0;i<totalParticle;i++)
 
 particles.push({
 
@@ -2908,8 +3594,6 @@ dx:(Math.random()-.5)*0.5,
 dy:(Math.random()-.5)*0.5
 
 });
-
-}
 
 function animateParticles(){
 
@@ -2993,6 +3677,16 @@ nav.classList.toggle("active");
 
 });
 
+document.querySelectorAll("nav a").forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+nav.classList.remove("active");
+
+});
+
+});
+
 const sections=document.querySelectorAll("section");
 
 const links=document.querySelectorAll("nav a");
@@ -3056,6 +3750,391 @@ preloader.classList.add("hide");
 },1200);
 
 });
+
+let player;
+
+function onYouTubeIframeAPIReady(){
+
+    player = new YT.Player("player",{
+
+        height:"75",
+        width:"100%",
+        videoId:playlist[currentSong].id,
+
+        events:{
+            onReady:onPlayerReady,
+            onStateChange:onPlayerStateChange
+        }
+
+    });
+
+}
+
+function onPlayerReady(){
+
+    updatePlayer();
+    renderPlaylist();
+    player.setVolume(100);
+
+}
+
+function updatePlayer(){
+
+renderPlaylist();
+
+document.getElementById("songTitle").innerHTML =
+playlist[currentSong].title;
+
+document.getElementById("artist").innerHTML =
+playlist[currentSong].artist;
+
+document.getElementById("cover").src =
+playlist[currentSong].cover;
+
+}
+
+const playlist = [
+
+{
+title:"Golden Brown",
+artist:"TikTok Viral",
+id:"4qKGx3VhVnM",
+cover:"assets/music-cover.jpg"
+},
+
+{
+title:"Night Changes",
+artist:"One Direction",
+id:"syFZfO_wfMQ",
+cover:"assets/night.jpg"
+},
+
+{
+title:"Perfect",
+artist:"Ed Sheeran",
+id:"2Vv-BfVoq4g",
+cover:"assets/perfect.jpg"
+},
+
+{
+title:"Until I Found You",
+artist:"Stephen Sanchez",
+id:"GxldQ9eX2wo",
+cover:"assets/until.jpg"
+},
+
+{
+title:"See You Again",
+artist:"Wiz Khalifa",
+id:"RgKAFK5djSk",
+cover:"assets/seeyou.jpg"
+},
+
+{
+title:"Here With Me",
+artist:"d4vd",
+id:"B7Y4LHbpXv0",
+cover:"assets/here.jpg"
+},
+
+{
+title:"Birds Of A Feather",
+artist:"Billie Eilish",
+id:"V9PVRfjEBTI",
+cover:"assets/birds.jpg"
+},
+
+{
+title:"Apocalypse",
+artist:"CAS",
+id:"sElE_BfQ67s",
+cover:"assets/apocalypse.jpg"
+}
+
+];
+
+let currentSong = 0;
+
+document.getElementById("searchBtn").onclick=()=>{
+
+const keyword=
+
+document
+
+.getElementById("searchSong")
+
+.value
+
+.toLowerCase();
+
+const index=
+
+playlist.findIndex(song=>
+
+song.title
+
+.toLowerCase()
+
+.includes(keyword)
+
+);
+
+if(index!=-1){
+
+playSong(index);
+
+}else{
+
+alert("Lagu tidak ditemukan");
+
+}
+
+}
+
+    function renderPlaylist(){
+
+const playlistBox=document.getElementById("playlist");
+
+playlistBox.innerHTML="";
+
+playlist.forEach((song,index)=>{
+
+playlistBox.innerHTML+=`
+
+<div class="song-item ${index===currentSong?"active":""}"
+
+onclick="playSong(${index})">
+
+<div>
+
+<h4>${song.title}</h4>
+
+<span>${song.artist}</span>
+
+</div>
+
+🎵
+
+</div>
+
+`;
+
+});
+
+}
+
+function playSong(index){
+
+currentSong=index;
+
+if(player){
+
+player.loadVideoById(
+playlist[currentSong].id
+);
+
+}
+
+updatePlayer();
+renderPlaylist();
+
+}
+
+document.getElementById("nextBtn").onclick=()=>{
+
+currentSong++;
+
+if(currentSong>=playlist.length){
+
+currentSong=0;
+
+}
+
+if(player){
+    player.loadVideoById(playlist[currentSong].id);
+}
+
+updatePlayer();
+
+}
+
+document.getElementById("prevBtn").onclick=()=>{
+
+currentSong--;
+
+if(currentSong<0){
+
+currentSong=playlist.length-1;
+
+}
+
+player.loadVideoById(playlist[currentSong].id);
+
+updatePlayer();
+
+}
+
+let playing=false;
+
+document.getElementById("playBtn").onclick=()=>{
+
+if(playing){
+
+player.pauseVideo();
+
+document.getElementById("playBtn").innerHTML="▶";
+
+document
+.querySelector(".music-player")
+.classList.remove("playing");
+
+}else{
+
+player.playVideo();
+
+document.getElementById("playBtn").innerHTML="⏸";
+
+document
+.querySelector(".music-player")
+.classList.add("playing");
+
+}
+
+playing=!playing;
+
+}
+
+document
+.getElementById("contactForm")
+.addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
+alert("Pesan berhasil dikirim!");
+
+});
+
+document.addEventListener("keydown",(e)=>{
+
+if(e.key==="Escape"){
+
+modal.classList.remove("show");
+
+}
+
+});
+
+document
+.getElementById("volume")
+.oninput=function(){
+
+player.setVolume(this.value);
+
+}
+
+setInterval(()=>{
+
+if(player && player.getCurrentTime){
+
+const current=player.getCurrentTime();
+
+const total=player.getDuration();
+
+if(total){
+
+const percent=current/total*100;
+
+document
+.getElementById("progress")
+.style.width=percent+"%";
+
+document
+.getElementById("currentTime")
+.innerHTML=formatTime(current);
+
+document
+.getElementById("duration")
+.innerHTML=formatTime(total);
+
+}
+
+}
+
+},500);
+
+function formatTime(sec){
+
+const m=Math.floor(sec/60);
+
+const s=Math.floor(sec%60);
+
+return m+":"+(s<10?"0"+s:s);
+
+}
+
+document
+.querySelector(".progress-bar")
+.onclick=function(e){
+
+const width=this.clientWidth;
+
+const click=e.offsetX;
+
+const total=player.getDuration();
+
+player.seekTo(
+
+(click/width)*total,
+
+true
+
+);
+
+}
+
+function onPlayerStateChange(event){
+
+if(event.data==YT.PlayerState.ENDED){
+
+currentSong++;
+
+if(currentSong>=playlist.length){
+
+currentSong=0;
+
+}
+
+player.loadVideoById(
+
+playlist[currentSong].id
+
+);
+
+updatePlayer();
+
+}
+
+}
+
+let favorite=false;
+
+document
+
+.getElementById("favBtn")
+
+.onclick=()=>{
+
+favorite=!favorite;
+
+document
+
+.getElementById("favBtn")
+
+.innerHTML=
+
+favorite?"❤️":"🤍";
+
+}
 </script>
 </body>
 
